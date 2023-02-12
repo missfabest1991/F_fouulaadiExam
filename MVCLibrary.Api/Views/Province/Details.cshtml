@@ -1,0 +1,21 @@
+﻿@model MVCLibrary.DTO.ProvinceDTO
+
+<h1>جزییات</h1>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProvinceId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProvinceName)
+        </dd>
+    </dl>
+</div>
+<div>
+
+    <a asp-action="Index">برگشت</a>
+</div>
+

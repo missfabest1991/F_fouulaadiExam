@@ -1,0 +1,52 @@
+﻿@model MVCLibrary.DTO.BookDetailDTO
+
+<html>
+<head>
+    <title>
+    </title>
+</head>
+<body style="direction:rtl;position:center">
+
+
+    <div>
+
+        @using (Html.BeginForm("Create", "BookDetail", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {
+            <div>
+                <table>
+                    <tr style="background-color:#E6E6FA;">
+                        <th>تاریخ انتشار</th>
+                        <td calss="padding">
+                            <input type="text" class="form-control col-4" name="PublishDateTime">
+
+                        </td>
+                        <th>نوبت چاپ</th>
+                        <td calss="padding">
+                            <input type="text" class="form-control col-4" name="CountEdition">
+                        </td>
+                        <th>توضیحات</th>
+                        <td calss="padding">
+                            <input type="text" class="form-control col-4" name="Description">
+                        </td>
+                    </tr>
+            </div>
+            <br>
+
+            <div>
+                <tr style="background-color:#FFFACD">
+                    <th>شناسه کتاب</th>
+                    <td calss="padding">
+                        <input type="text" class="form-control col-4" name="BookId">
+                    </td>
+                   
+                </tr>
+            </div>
+        }
+        </table>
+        <button type="submit">ارسال</button>
+    </div>
+</body>
+</html>
+
+
+

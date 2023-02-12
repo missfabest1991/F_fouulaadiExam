@@ -1,0 +1,31 @@
+﻿@model MVCLibrary.DTO.CategoryDTO
+<html>
+<head>
+    <title>
+    </title>
+</head>
+<body style="direction:rtl;position:center">
+    <div>
+
+        @using (Html.BeginForm("Create", "Category", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {
+            <div>
+                <table>
+                    <tr style="background-color:#E6E6FA;">
+                        <th>عنوان</th>
+                        <td calss="padding">
+                            <input type="text" class="form-control col-4" name="Name">
+                        </td>    
+            </div>
+            <br>
+
+        }
+        </table>
+        <button type="submit">ارسال</button>
+    </div>
+</body>
+</html>
+
+
+
+

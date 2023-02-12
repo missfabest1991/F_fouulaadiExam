@@ -1,0 +1,60 @@
+﻿@model MVCLibrary.DTO.BookDetailDTO
+
+
+<h2>ویرایش</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+       
+        <hr />
+        @Html.ValidationSummary(true,"", new { @class = "text-danger" })
+        @Html.HiddenFor(x => x.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.PublishDateTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x =>x.PublishDateTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.PublishDateTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.CountEdition, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.CountEdition, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.CountEdition, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.BookId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.BookId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.BookId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

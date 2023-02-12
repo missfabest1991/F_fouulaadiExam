@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MVCLibrary.DTO.ProvinceDTO>
+
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <form method="post">
+
+        <br /><br />
+        <table border="1" cellpadding="50" align="center">
+            <tr>
+                <th>شناسه استان</th>
+                <th> نام استان</th>
+
+                <th colspan="4">عملیات</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ProvinceId</td>
+                    <td>@item.ProvinceName</td>
+                    <td>
+                        @Html.ActionLink("ویرایش", "Edit", new { id = item.ProvinceId })
+                    </td>
+                    <td>
+                        @Html.ActionLink("جزییات", "Details", new { id = item.ProvinceId })
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("حذف", "Delete", new { id = item.ProvinceId },new { onclick = "return confirm('آیا از حذف این مورد مطمئن هستید؟');" })
+                    </td>
+
+                </tr>
+            }
+        </table>
+    </form>
+
+
+</body>
+</html>
+
+
+

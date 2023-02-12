@@ -1,0 +1,54 @@
+﻿@model MVCLibrary.DTO.BookDTO
+<html>
+<head>
+    <title>
+    </title>
+</head>
+<body style="direction:rtl;position:center">
+
+
+    <div>
+
+        @using (Html.BeginForm("Create", "Book", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {
+            <div>
+                <table>
+                    <tr style="background-color:#E6E6FA;">
+                        <th>عنوان</th>
+                        <td calss="padding">
+                            <input type="text" class="form-control col-4" name="Name">
+
+                        </td>
+                        <th>نام نویسنده</th>
+                        <td calss="padding">
+                            <input type="text" class="form-control col-4" name="AuthorName">
+                        </td>
+                        <th>قیمت</th>
+                        <td calss="padding">
+                            <input type="text" class="form-control col-4" name="Price">
+                        </td>
+                    </tr>
+            </div>
+            <br>
+
+            <div>
+                <tr style="background-color:#FFFACD">
+                    <th>شناسه کتابخانه</th>
+                    <td calss="padding">
+                        <input type="text" class="form-control col-4" name="LibraryId">
+                    </td>
+                    <th> شناسه دسته بندی</th>
+                    <td calss="padding">
+                        <input type="text" class="form-control col-4" name="CategoryId">
+                    </td>
+                </tr>
+            </div>
+        }
+        </table>
+        <button type="submit">ارسال</button>
+    </div>
+</body>
+</html>
+
+
+
